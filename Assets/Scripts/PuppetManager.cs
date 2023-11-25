@@ -49,10 +49,8 @@ public class PuppetManager : MonoBehaviour
 
         avatar = avatarParent.transform.GetChild(0);
 
-        // avatarParent.transform.localPosition += avatarPositionOffset;
-        // avatarParent.transform.localRotation *= Quaternion.Euler(avatarRotationOffset);
-        avatarParent.transform.localPosition = avatarPositionOffset;
-        avatarParent.transform.localRotation = Quaternion.Euler(avatarRotationOffset);
+        avatarParent.transform.localPosition += avatarPositionOffset;
+        avatarParent.transform.localRotation *= Quaternion.Euler(avatarRotationOffset);
         
         avatarRobotBoneMap = avatar.GetComponent<AvatarRobotBoneMap>();
         humanBoneMap.BoneMaps = avatarRobotBoneMap.GetBoneMaps();
@@ -95,14 +93,14 @@ public class PuppetManager : MonoBehaviour
         for (var i = 0; i < robotBoneMapping.Count; i++)
         {
             var jointIndex = (JointIndices)i;
-
+        
             if (!humanBoneMap.BoneMaps.ContainsKey(jointIndex)) continue;
-
+        
             var robotBone = robotBoneMapping[jointIndex];
-
+        
             var boneMap = humanBoneMap.BoneMaps[jointIndex];
             boneMap.robotBone = robotBone;
-
+        
             boneMap.SetOriginalAvatarRobotRotationOffset();
         }
 
