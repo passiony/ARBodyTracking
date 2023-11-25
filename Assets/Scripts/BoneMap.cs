@@ -9,9 +9,10 @@ public class BoneMap
 
     public void UpdateAvatarBoneLocalRotation()
     {
-        var lookRotation = Quaternion.LookRotation(robotBone.forward, robotBone.up);
-        var rotation = lookRotation * Quaternion.Inverse(originalRotationOffset);
-        avatarBone.rotation = rotation.normalized;
+        // var lookRotation = Quaternion.LookRotation(robotBone.forward, robotBone.up);
+        // var rotation = lookRotation * Quaternion.Inverse(originalRotationOffset);
+        // avatarBone.rotation = rotation.normalized;
+        avatarBone.rotation = robotBone.rotation;
     }
 
     public void SetOriginalAvatarRobotRotationOffset()

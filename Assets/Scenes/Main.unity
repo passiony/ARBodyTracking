@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarParent: {fileID: 1780858446}
   avatarPositionOffset: {x: 0, y: 0, z: 0}
-  avatarRotationOffset: {x: 0, y: 180, z: 0}
+  avatarRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &369471431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7038642209737255881, guid: dcbaf6d04e62852449f6853fb3ea9848, type: 3}

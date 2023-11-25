@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARFoundation.Samples;
 
@@ -62,8 +63,14 @@ public class PuppetManager : MonoBehaviour
 
         // avatarParent.transform.localPosition += humanBoneMap.DeltaLocalPosition;
         // avatarParent.transform.localRotation *= humanBoneMap.DeltaLocalRotation;
+        // avatarParent.transform.localPosition = humanBoneMap.robotLocalPosition;
+        // avatarParent.transform.localRotation = humanBoneMap.robotLocalRotation;
+        
         avatarParent.transform.localPosition = humanBoneMap.robotLocalPosition;
-        avatarParent.transform.localRotation = humanBoneMap.robotLocalRotation;
+        var scale = humanBoneMap.robotLocalScale;
+        scale.x = -scale.x;
+        scale.z = -scale.z;
+        avatarParent.transform.localScale = scale;
         
         for (var i = 0; i < humanBoneMap.BoneMaps.Count; i++)
         {
@@ -88,7 +95,6 @@ public class PuppetManager : MonoBehaviour
 
         humanBoneMap.robotLocalPosition = initialPosition;
         humanBoneMap.robotLocalRotation = initialRotation;
-        avatarParent.transform.localScale = humanBoneMap.robotLocalScale;
 
         for (var i = 0; i < robotBoneMapping.Count; i++)
         {
@@ -115,7 +121,12 @@ public class PuppetManager : MonoBehaviour
         if (humanBoneMap.robotEstimatedHeight != estimatedHeight)
         {
             humanBoneMap.robotEstimatedHeight = estimatedHeight;
-            avatarParent.transform.localScale = humanBoneMap.robotLocalScale;
+            // avatarParent.transform.localScale = humanBoneMap.robotLocalScale;
+            var scale = humanBoneMap.robotLocalScale;
+            scale.x = -scale.x;
+            scale.z = -scale.z;
+            avatarParent.transform.localScale = scale;
+
             Debug.Log("Estimated Height Changed: " + estimatedHeight);
         }
     }
