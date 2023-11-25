@@ -49,9 +49,11 @@ public class PuppetManager : MonoBehaviour
 
         avatar = avatarParent.transform.GetChild(0);
 
-        avatarParent.transform.localPosition += avatarPositionOffset;
-        avatarParent.transform.localRotation *= Quaternion.Euler(avatarRotationOffset);
-
+        // avatarParent.transform.localPosition += avatarPositionOffset;
+        // avatarParent.transform.localRotation *= Quaternion.Euler(avatarRotationOffset);
+        avatarParent.transform.localPosition = avatarPositionOffset;
+        avatarParent.transform.localRotation = Quaternion.Euler(avatarRotationOffset);
+        
         avatarRobotBoneMap = avatar.GetComponent<AvatarRobotBoneMap>();
         humanBoneMap.BoneMaps = avatarRobotBoneMap.GetBoneMaps();
     }
