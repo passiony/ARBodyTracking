@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/ARCloths.unity
+    guid: cdc5ac43f9ec8554aa41054037570535
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dcfcfe40ce7e6d54abc4f485eed22254, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a0916db19b9548341bb799709b9f4347, type: 2}

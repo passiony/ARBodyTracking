@@ -19,6 +19,10 @@ public class AvatarParent : MonoBehaviour
         Cloths = gameObject.GetComponentsInChildren<PuppetComponent>(true);
         arHumanBodyManager = FindObjectOfType<ARHumanBodyManager>();
         avatarRobotTestSuite = FindObjectOfType<AvatarRobotTestSuite>();
+        foreach (var cloth in Cloths)
+        {
+            cloth.StopTracking();
+        }
     }
 
     public void ShowNext()
