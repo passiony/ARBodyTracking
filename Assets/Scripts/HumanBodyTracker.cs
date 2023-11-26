@@ -14,6 +14,9 @@ namespace UnityEngine.XR.ARFoundation.Samples
         [Tooltip("The ARHumanBodyManager which will produce body tracking events.")]
         ARHumanBodyManager m_HumanBodyManager;
 
+        [SerializeField]
+        private AvatarParent puppetManager;
+
         /// <summary>
         /// Get/Set the <c>ARHumanBodyManager</c>.
         /// </summary>
@@ -34,16 +37,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         Dictionary<TrackableId, BoneController> m_SkeletonTracker = new Dictionary<TrackableId, BoneController>();
 
-        private PuppetManager puppetManager;
 
         private BoneController boneController;
 
         private float estimatedHeightScaleFactor = 1.0f;
-
-        private void Start()
-        {
-            puppetManager = GetComponent<PuppetManager>();
-        }
 
         void OnEnable()
         {

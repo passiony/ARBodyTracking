@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARFoundation.Samples;
 
 public class PuppetManager : MonoBehaviour
 {
@@ -162,7 +159,7 @@ public class PuppetManager : MonoBehaviour
         avatarRobotTestSuite.isTesting = !avatarRobotTestSuite.isTesting;
         if (avatarRobotTestSuite.isTesting)
         {
-            StartCoroutine(avatarRobotTestSuite.TestPositionUpdate());
+            avatarRobotTestSuite.StartTest();
         }
     }
 
